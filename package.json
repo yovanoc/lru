@@ -1,0 +1,50 @@
+{
+  "name": "@devchris/lru",
+  "version": "0.1.0",
+  "description": "Least Recently Used (LRU) cache algorithm",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "test": "jest --config jestconfig.json",
+    "build": "tsc",
+    "format": "prettier --write 'src/**/*.{ts,tsx}'",
+    "lint": "tslint -c tslint.json 'src/**/*.{ts,tsx}' -t stylish",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yovanoc/lru.git"
+  },
+  "keywords": [
+    "lib",
+    "lru",
+    "least",
+    "recently",
+    "used",
+    "cache",
+    "algorithm"
+  ],
+  "author": "Christopher Yovanovitch <yovano_c@outlook.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yovanoc/lru/issues"
+  },
+  "homepage": "https://github.com/yovanoc/lru#readme",
+  "devDependencies": {
+    "@types/jest": "^23.3.11",
+    "codecov": "^4.0.0-0",
+    "jest": "^23.6.0",
+    "prettier": "^1.15.3",
+    "ts-jest": "^23.10.0-beta.6",
+    "tslint": "^5.12.0",
+    "tslint-config-prettier": "^1.17.0",
+    "typescript": "^3.3.0-dev.20190104"
+  },
+  "files": [
+    "lib/**/*"
+  ]
+}
