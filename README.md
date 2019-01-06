@@ -4,7 +4,7 @@ A finite key-value map using the Least Recently Used (LRU) algorithm, where the 
 
 Useful when you want to limit use of memory to only hold commonly-used things.
 
-[![CircleCI Build](https://img.shields.io/circleci/project/gh/yovanoc/lru.svg?style=flat-square)](https://circleci.com/gh/yovanoc/lru)
+[![CircleCI Build](https://img.shields.io/circleci/project/github/yovanoc/lru.svg?style=flat-square)](https://circleci.com/gh/yovanoc/lru)
 [![Codecov Coverage](https://img.shields.io/codecov/c/github/yovanoc/lru/coverage.svg?style=flat-square)](https://codecov.io/gh/yovanoc/lru/)
 
 ## Terminology & design
