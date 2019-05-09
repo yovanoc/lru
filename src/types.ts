@@ -1,5 +1,5 @@
 // An entry holds the key and value, and pointers to any older and newer entries.
-export interface IEntry<K, V> {
+export interface Entry<K, V> {
   key: K;
   value: V;
 }

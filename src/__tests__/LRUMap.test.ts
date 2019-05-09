@@ -66,7 +66,7 @@ test('Construct with iterator', () => {
 test('Assign', () => {
   const c = new LRUMap<string, number>(undefined, [['adam', 29], ['john', 26], ['angela', 24], ['bob', 48]]);
 
-  const newEntries: Array<[string, number]> = [['mimi', 1], ['patrick', 2], ['jane', 3], ['fred', 4]];
+  const newEntries: [string, number][] = [['mimi', 1], ['patrick', 2], ['jane', 3], ['fred', 4]];
   c.assign(newEntries);
   expect(c.size).toBe(4);
   expect(c.limit).toBe(4);

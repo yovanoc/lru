@@ -8,7 +8,8 @@
     "test": "jest --config jestconfig.json",
     "build": "tsc",
     "format": "prettier --write 'src/**/*.{ts,tsx}'",
-    "lint": "tslint -c tslint.json 'src/**/*.{ts,tsx}' -t stylish",
+    "lint": "eslint './src/**/*.{ts,tsx}'",
+    "lint:fix": "npm run lint --fix",
     "prepare": "npm run build",
     "prepublishOnly": "npm test && npm run lint",
     "preversion": "npm run lint",
@@ -35,14 +36,19 @@
   },
   "homepage": "https://github.com/yovanoc/lru#readme",
   "devDependencies": {
-    "@types/jest": "^23.3.11",
+    "@types/jest": "^23.3.14",
+    "@typescript-eslint/eslint-plugin": "^1.7.0",
+    "@typescript-eslint/parser": "^1.7.0",
     "codecov": "^4.0.0-0",
+    "eslint": "^5.16.0",
+    "eslint-config-prettier": "^4.2.0",
+    "eslint-plugin-prettier": "^3.0.1",
     "jest": "^23.6.0",
-    "prettier": "^1.15.3",
+    "prettier": "^1.17.0",
     "ts-jest": "^23.10.0-beta.6",
-    "tslint": "^5.12.0",
-    "tslint-config-prettier": "^1.17.0",
-    "typescript": "^3.3.0-dev.20190104"
+    "tslint": "^5.16.0",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.4.5"
   },
   "files": [
     "lib/**/*"

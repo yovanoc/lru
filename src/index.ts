@@ -1,7 +1,7 @@
 import Entry from './Entry';
 import EntryIterator from './EntryIterator';
 import KeyIterator from './KeyIterator';
-import { IEntry, NEWER, OLDER } from './types';
+import { Entry as EntryBase, NEWER, OLDER } from './types';
 import ValueIterator from './ValueIterator';
 
 /**
@@ -43,7 +43,7 @@ export default class LRUMap<K, V> {
   // `entries` should be an Array or other iterable object whose elements are
   // key-value pairs (2-element Arrays). Each key-value pair is added to the new Map.
   // null is treated as undefined.
-  constructor(limit?: number, entries?: Iterable<[K, V]>) {
+  public constructor(limit?: number, entries?: Iterable<[K, V]>) {
     if (!limit) {
       limit = 0;
     }
@@ -225,7 +225,7 @@ export default class LRUMap<K, V> {
   }
 
   // Returns an iterator over all entries, starting with the oldest.
-  public entries() {
+  public entries(): this {
     return this;
   }
 
@@ -247,7 +247,7 @@ export default class LRUMap<K, V> {
   }
 
   // Returns an object suitable for JSON encoding
-  public toJSON(): Array<IEntry<K, V>> {
+  public toJSON(): EntryBase<K, V>[] {
     const s = new Array(this.size);
     let i = 0;
     let entry = this.oldest;
@@ -272,7 +272,7 @@ export default class LRUMap<K, V> {
     return s;
   }
 
-  private _markEntryAsUsed(entry: Entry<K, V>) {
+  private _markEntryAsUsed(entry: Entry<K, V>): void {
     if (entry === this.newest) {
       // Already the most recenlty used entry, so no need to update the list
       return;

@@ -3,7 +3,7 @@ import { NEWER } from './types';
 
 export default class EntryIterator<K, V> {
   private entry?: Entry<K, V>;
-  constructor(oldestEntry?: Entry<K, V>) {
+  public constructor(oldestEntry?: Entry<K, V>) {
     this.entry = oldestEntry;
   }
 
@@ -17,7 +17,7 @@ export default class EntryIterator<K, V> {
     }
   }
 
-  public [Symbol.iterator]() {
+  public [Symbol.iterator](): EntryIterator<K, V> {
     return this;
   }
 }
